@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/styles/produtos.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+    <title>Carrinho de Compras</title>
+</head>
+
+<body>
+    <div class="texto__logomarca">
+        <h1 class="texto__papelaria">Papelaria</h1>
+        <h1 class="texto__flamingo">Flamingo's</h1>
+    </div>
+
+    <img class="wave" src="/assets/img/wave.svg" />
+    <div class="container-box flex-box">
+        <div class="content">
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Marca</th>
+                        <th>Cor</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <%= data.codigo %>
+                        </td>
+                        <td>
+                            <%= data.nome %>
+                        </td>
+                        <td>
+                            <%= data.marca %>
+                        </td>
+                        <td>
+                            <%= data.cor %>
+                        </td>
+                        <td>
+                            R$ <%= data.preco %>
+                        </td>
+                        <td>
+                            <a class="acoes"
+                                href="/finalizar-compra/<%= data.codigo %>/<%= data.quantidade %>">Finalizar
+                                Compra</a>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <div class="action-footer">
+                <a class="btn btn__home" href="/produtos">Voltar</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

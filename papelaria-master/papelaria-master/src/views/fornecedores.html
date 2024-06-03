@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/styles/produtos.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+    <title>Fornecedores</title>
+</head>
+
+<body>
+    <div class="texto__logomarca">
+        <h1 class="texto__papelaria">Papelaria</h1>
+        <h1 class="texto__flamingo">Flamingo's</h1>
+    </div>
+
+    <img class="wave" src="/assets/img/wave.svg" />
+    <div class="container-box flex-box">
+        <div class="content">
+            <table class="content-table">
+                <!-- Para caso não haja nenhum produto -->
+                <% if (data.length==0){ %>
+                    <thead>
+                        <tr>
+                            <th>Aviso!</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nenhum fornecedor cadastrado!</td>
+                        </tr>
+                    </tbody>
+                    <% } else {%>
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Endereço</th>
+                                <th>CNPJ</th>
+                                <th>Telefone</th>
+                                <th>Editar</th>
+                                <th>Excluir</th>
+                            </tr>
+                        </thead>
+                        <% for (let i=0; i < data.length; i++) { %>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <%= data[i].codigo %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].nome %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].email %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].endereco %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].cnpj %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].telefone %>
+                                    </td>
+                                    <td>
+                                        <a class="acoes" href="/editar-fornecedor/<%= data[i].codigo %>"><span><i
+                                                    class="fas fa-edit"></i></span></a>
+                                    </td>
+                                    <td>
+                                        <a class="acoes" href="/excluir-fornecedor/<%= data[i].codigo %>"><i
+                                                class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <% } %>
+                                <% } %>
+            </table>
+            <div class="action-footer">
+                <a class="btn btn__home" href="/home">Voltar</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

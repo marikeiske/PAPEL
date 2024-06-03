@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/assets/styles/cadastro-user.css">
+
+    <title>Editar Produto</title>
+</head>
+
+<body>
+    <div class="texto__logomarca">
+        <h1 class="texto__papelaria">Papelaria</h1>
+        <h1 class="texto__flamingo">Flamingo's</h1>
+    </div>
+
+    <img class="wave" src="/assets/img/wave.svg">
+    <div class="container">
+        <div class="img">
+            <img src="/assets/img/flamingo-2.svg">
+        </div>
+        <div class="login-content">
+            <form name="frmCadastro" action="<%= action %>" method="POST">
+                <img src="/assets/img/logo.svg">
+                <h2 class="title">Editar Produto</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Nome Produto</h5>
+                        <input type="text" class="input" name="produtoNome" id="produtoNome" value="<%= data.nome %>">
+                    </div>
+                </div>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Marca</h5>
+                        <input type="text" class="input" name="produtoMarca" id="produtoMarca" value="<%= data.marca %>">
+                    </div>
+                </div>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Cor</h5>
+                        <input type="text" class="input" name="produtoCor" id="produtoCor" value="<%= data.cor %>">
+                    </div>
+                </div>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Quantidade</h5>
+                        <input type="text" class="input" name="produtoQuant" id="produtoQuant" value="<%= data.quantidade %>">
+                    </div>
+                </div>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Preço</h5>
+                        <input type="text" class="input" name="produtoPreco" id="produtoPreco" value="<%= data.preco %>">
+                    </div>
+                </div>
+                <a href="/produtos">Voltar</a>
+                <input type="submit" class="btn" value="Editar">
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+</body>
+
+</html>
